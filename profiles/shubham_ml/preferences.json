@@ -1,0 +1,39 @@
+{
+  "preferred_job_titles": [
+    "Machine Learning Engineer",
+    "data scientist",
+    "Ai engineer",
+    "computer vision engineer",
+    "GenAi engineer",
+    "Agentic Ai engineer",
+    "LLM engineer"
+  ],
+  "preferred_locations": [
+    "Bengaluru",
+    "gurugram",
+    "noida",
+    "greater noida"
+  ],
+  "salary_min_lpa": 12,
+  "salary_max_lpa": 25,
+  "preferred_work_arrangement": [
+    "Remote",
+    "Hybrid"
+  ],
+  "excluded_companies": [],
+  "skills_for_search": [
+    "Python",
+    "SQL",
+    "C",
+    "C++",
+    "Java",
+    "Deep Learning",
+    "Computer Vision",
+    "Predictive Analytics"
+  ],
+  "digest_time": "08:00",
+  "digest_timezone": "IST",
+  "employment_type": [
+    "Full-time"
+  ]
+}

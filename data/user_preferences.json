@@ -1,0 +1,30 @@
+{
+  "preferred_job_titles": [
+    "Buying planner",
+    "Merchandise planner",
+    "Retial",
+    "Inventory planner",
+    "Warehouse planner",
+    "Supply chain planner",
+    "Wholesale"
+  ],
+  "preferred_locations": [
+    "Zirakhpur",
+    "Remote"
+  ],
+  "employment_type": [
+    "Full-time"
+  ],
+  "salary_min_lpa": 12,
+  "salary_max_lpa": 24,
+  "preferred_work_arrangement": [
+    "Remote",
+    "Hybrid"
+  ],
+  "excluded_companies": [],
+  "digest_time": "08:00",
+  "digest_timezone": "IST",
+  "skills_for_search": [
+    "Excel"
+  ]
+}
