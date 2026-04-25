@@ -1,7 +1,35 @@
+# Credentials
 .env
-venv/
-__pycache__/
-.DS_Store
-*.pyc
+
+# Personal profile data — never commit resumes or job history
+profiles/
+data/
+
+# Logs
 logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code local settings
 .claude/

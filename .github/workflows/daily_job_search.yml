@@ -1,0 +1,56 @@
+name: Daily Job Search
+
+on:
+  schedule:
+    # 8:00 AM IST = 2:30 AM UTC (IST is UTC+5:30)
+    - cron: '30 2 * * 1-5'   # Weekdays only (Mon–Fri)
+  workflow_dispatch:           # Manual trigger for testing
+
+jobs:
+  job_matcher:
+    name: Fetch & Match Jobs
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download spaCy model
+        run: python -m spacy download en_core_web_sm
+
+      - name: Run Daily Job Matcher
+        env:
+          ADZUNA_APP_ID:        ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY:       ${{ secrets.ADZUNA_APP_KEY }}
+          OPENAI_API_KEY:       ${{ secrets.OPENAI_API_KEY }}
+          USE_GPT_MATCHING:     ${{ secrets.USE_GPT_MATCHING }}
+          GMAIL_EMAIL:          ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL:      ${{ secrets.RECIPIENT_EMAIL }}
+          PREFERRED_JOB_TITLES: ${{ secrets.PREFERRED_JOB_TITLES }}
+          PREFERRED_LOCATIONS:  ${{ secrets.PREFERRED_LOCATIONS }}
+          SALARY_MIN_LPA:       ${{ secrets.SALARY_MIN_LPA }}
+          SALARY_MAX_LPA:       ${{ secrets.SALARY_MAX_LPA }}
+          MATCH_SCORE_THRESHOLD: ${{ secrets.MATCH_SCORE_THRESHOLD }}
+          TOP_JOBS_COUNT:       ${{ secrets.TOP_JOBS_COUNT }}
+        run: python main.py
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-matcher-logs-${{ github.run_id }}
+          path: logs/
+          retention-days: 7

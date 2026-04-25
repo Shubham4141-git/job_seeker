@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+  Daily Job Matcher — Static email template preview.
+  The actual email is built dynamically in email_templates.py.
+  This file is a reference / preview of the layout only.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Daily Job Digest Preview</title>
+<style>
+  body { margin:0; padding:0; background:#f8f9fa;
+         font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; }
+  .container { max-width:640px; margin:20px auto; background:#fff;
+               border-radius:16px; overflow:hidden;
+               box-shadow:0 4px 12px rgba(0,0,0,.10); }
+  .header { background:linear-gradient(135deg,#1a73e8,#0d47a1);
+            padding:32px; text-align:center; color:#fff; }
+  .header h1 { margin:0 0 8px; font-size:26px; font-weight:800; }
+  .stats { background:#e8f0fe; padding:20px 32px; }
+  .stat-grid { display:flex; justify-content:space-around; }
+  .stat-item { text-align:center; }
+  .stat-num { font-size:28px; font-weight:800; color:#1a73e8; }
+  .stat-label { font-size:12px; color:#5f6368; text-transform:uppercase; }
+  .body { padding:24px 32px; }
+  .job-card { background:#fff; border:1px solid #e0e0e0; border-radius:12px;
+              padding:24px; margin-bottom:24px;
+              box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .card-header { border-bottom:2px solid #1a73e8; padding-bottom:12px;
+                 margin-bottom:16px; display:flex;
+                 justify-content:space-between; align-items:center; }
+  .rank { font-size:12px; color:#5f6368; font-weight:600;
+          text-transform:uppercase; letter-spacing:1px; }
+  .score { font-size:20px; font-weight:800; color:#1a73e8; }
+  .job-title { font-size:20px; font-weight:700; color:#202124; margin:0 0 12px; }
+  .meta-table td { padding:4px 0; }
+  .meta-label { color:#5f6368; padding-right:12px; width:100px; }
+  .meta-value { font-weight:600; color:#202124; }
+  .salary { color:#34a853; }
+  .why-box { background:#f8f9fa; border-radius:8px; padding:14px;
+             margin-bottom:14px; }
+  .why-title { font-weight:700; color:#34a853; margin:0 0 6px; }
+  .skills-list { margin:0; padding-left:20px; line-height:1.9; }
+  .skill-match { color:#34a853; font-weight:700; }
+  .skill-missing { color:#ea4335; font-weight:700; }
+  .tips-box { background:#e8f5e9; border-radius:8px; padding:14px;
+              margin-bottom:14px; }
+  .cta { text-align:center; margin-top:16px; }
+  .btn-primary { display:inline-block; background:#1a73e8; color:#fff;
+                 text-decoration:none; padding:12px 28px; border-radius:6px;
+                 font-weight:700; font-size:15px; margin:0 8px; }
+  .btn-secondary { display:inline-block; background:#fff; color:#1a73e8;
+                   text-decoration:none; padding:12px 28px; border-radius:6px;
+                   font-weight:700; font-size:15px;
+                   border:2px solid #1a73e8; margin:0 8px; }
+  .strategy { background:#f8f9fa; padding:20px 32px;
+              border-top:1px solid #e0e0e0; }
+  .footer { background:#f1f3f4; padding:20px 32px; text-align:center;
+            border-top:1px solid #e0e0e0; color:#5f6368; font-size:13px; }
+  hr.divider { border:none; border-top:1px solid #e0e0e0; margin:0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>🎯 Daily Job Digest</h1>
+    <p style="margin:0;opacity:.9;">April 17, 2026 · 8:15 AM IST</p>
+  </div>
+
+  <!-- Stats Banner -->
+  <div class="stats">
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-num">87</div>
+        <div class="stat-label">Jobs Scanned</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" style="color:#34a853;">8</div>
+        <div class="stat-label">Top Matches</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">89%</div>
+        <div class="stat-label">Avg Match</div>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0 12px;">
+    <p style="margin:0;font-size:14px;color:#5f6368;text-align:center;">
+      <strong>Your Profile:</strong> ML Engineer · 3 yrs · Gurgaon
+      &nbsp;|&nbsp;
+      <strong>Searching:</strong> ML Engineer, Senior ML Engineer · ₹24-35 LPA
+    </p>
+  </div>
+
+  <!-- Job Card -->
+  <div class="body">
+    <div class="job-card">
+      <div class="card-header">
+        <span class="rank">RANK #1</span>
+        <span class="score">95% MATCH ⭐⭐⭐⭐⭐</span>
+      </div>
+      <h2 class="job-title">🎯 Senior ML Engineer (GenAI)</h2>
+      <table class="meta-table">
+        <tr>
+          <td class="meta-label">🏢 Company</td>
+          <td class="meta-value">Google Cloud India</td>
+        </tr>
+        <tr>
+          <td class="meta-label">📍 Location</td>
+          <td class="meta-value">Gurgaon, Hybrid</td>
+        </tr>
+        <tr>
+          <td class="meta-label">💰 Salary</td>
+          <td class="meta-value salary">₹26-28 LPA</td>
+        </tr>
+        <tr>
+          <td class="meta-label">📅 Posted</td>
+          <td class="meta-value">2 days ago</td>
+        </tr>
+      </table>
+      <div class="why-box" style="margin-top:14px;">
+        <p class="why-title">✅ WHY IT'S A GREAT MATCH</p>
+        <p style="margin:0;line-height:1.6;">
+          Your 3 years of direct agentic AI experience is exactly what they need.
+          All your core skills match perfectly. You're a strong candidate.
+        </p>
+      </div>
+      <p style="font-weight:700;margin:0 0 8px;">📋 REQUIRED SKILLS:</p>
+      <ul class="skills-list">
+        <li><span class="skill-match">✓</span> Python <span style="color:#5f6368;font-size:12px;">(You have)</span></li>
+        <li><span class="skill-match">✓</span> PyTorch <span style="color:#5f6368;font-size:12px;">(You have)</span></li>
+        <li><span class="skill-match">✓</span> LLMs &amp; GenAI <span style="color:#5f6368;font-size:12px;">(You have)</span></li>
+        <li><span class="skill-match">✓</span> RAG &amp; Vector DB <span style="color:#5f6368;font-size:12px;">(You have)</span></li>
+        <li><span class="skill-missing">✗</span> Kubernetes <span style="color:#5f6368;font-size:12px;">(Nice to have)</span></li>
+      </ul>
+      <div class="tips-box" style="margin-top:14px;">
+        <p style="font-weight:700;color:#2e7d32;margin:0 0 8px;">💡 APPLICATION TIPS:</p>
+        <ul style="margin:0;padding-left:20px;line-height:1.8;">
+          <li>Highlight your agentic AI projects in cover letter</li>
+          <li>Mention any production GenAI deployments</li>
+          <li>Show your LLM fine-tuning experience</li>
+        </ul>
+      </div>
+      <div class="cta">
+        <a href="#" class="btn-primary">🚀 APPLY NOW</a>
+        <a href="#" class="btn-secondary">View Full Job</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strategy -->
+  <div class="strategy">
+    <h3 style="margin:0 0 12px;">📚 Apply Strategy</h3>
+    <ol style="margin:0;padding-left:20px;line-height:1.9;">
+      <li>Apply to jobs with <strong>85%+ match</strong> first</li>
+      <li>Customise your cover letter using the tips above</li>
+      <li>Follow up after 1 week if no response</li>
+      <li>Try a LinkedIn direct message to the recruiter</li>
+    </ol>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p style="margin:0 0 6px;">Next digest: tomorrow at 08:00 IST</p>
+    <p style="margin:0;">Sent via <strong>Daily Job Matcher v2.0</strong> · India Edition</p>
+  </div>
+
+</div>
+</body>
+</html>
